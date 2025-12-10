@@ -1,27 +1,66 @@
-import "./config.ts"; // Add this line first
+/**
+ * Main entry point for @elizaos/core
+ *
+ * This is the default export that includes all modules.
+ * The build system creates separate bundles for Node.js and browser environments.
+ * Package.json conditional exports handle the routing to the correct build.
+ */
 
-export * from "./actions.ts";
-export * from "./context.ts";
-export * from "./database.ts";
-export * from "./defaultCharacter.ts";
-export * from "./embedding.ts";
-export * from "./evaluators.ts";
-export * from "./generation.ts";
-export * from "./goals.ts";
-export * from "./memory.ts";
-export * from "./messages.ts";
-export * from "./models.ts";
-export * from "./posts.ts";
-export * from "./providers.ts";
-export * from "./relationships.ts";
-export * from "./runtime.ts";
-export * from "./settings.ts";
-export * from "./types.ts";
-export * from "./logger.ts";
-export * from "./parsing.ts";
-export * from "./uuid.ts";
-export * from "./environment.ts";
-export * from "./cache.ts";
-export { default as knowledge } from "./knowledge.ts";
-export * from "./ragknowledge.ts";
-export * from "./utils.ts";
+// Export everything from types
+export * from './types';
+
+// Export utils first to avoid circular dependency issues
+export * from './utils';
+
+// Export schemas
+export * from './schemas/character';
+
+// Export character utilities
+export * from './character';
+
+// Export environment utilities
+export * from './utils/environment';
+
+// Export buffer utilities
+export * from './utils/buffer';
+
+// Export path utilities - these are Node.js specific but needed for backward compatibility
+// Browser builds will handle this through conditional exports in package.json
+export * from './utils/paths';
+
+// Then all other exports
+export * from './actions';
+export * from './database';
+export * from './entities';
+export * from './logger';
+export * from './memory';
+export * from './prompts';
+export * from './roles';
+export * from './runtime';
+export * from './secrets';
+export * from './settings';
+export * from './services';
+export * from './services/message-service';
+export * from './services/default-message-service';
+export * from './search';
+
+// Export ElizaOS
+export * from './elizaos';
+
+// Environment detection utilities
+interface GlobalWithWindow {
+  window?: Window;
+  document?: Document;
+}
+
+export const isBrowser =
+  typeof globalThis !== 'undefined' &&
+  typeof (globalThis as GlobalWithWindow).window !== 'undefined' &&
+  typeof (globalThis as GlobalWithWindow).document !== 'undefined';
+export const isNode =
+  typeof process !== 'undefined' &&
+  typeof process.versions !== 'undefined' &&
+  typeof process.versions.node !== 'undefined';
+
+// Re-export server health with a conditional stub for browser environments
+export * from './utils/server-health';

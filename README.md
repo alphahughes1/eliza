@@ -1,176 +1,206 @@
-# Eliza 🤖
-
 <div align="center">
-  <img src="./docs/static/img/eliza_banner.jpg" alt="Eliza Banner" width="100%" />
+  <h1>ElizaOS</h1>
+  <p><strong>The Open-Source Framework for Multi-Agent AI Development</strong></p>
+  <p>Build, deploy, and manage autonomous AI agents with a modern, extensible, and full-featured platform.</p>
 </div>
 
 <div align="center">
-
-📑 [Technical Report](https://arxiv.org/pdf/2501.06781) |  📖 [Documentation](https://elizaos.github.io/eliza/) | 🎯 [Examples](https://github.com/thejoven/awesome-eliza)
-
+  <!-- Badges will go here -->
+  <a href="https://github.com/elizaos/eliza/blob/main/LICENSE"><img src="https://img.shields.io/github/license/elizaos/eliza?style=for-the-badge" alt="License"></a>
+  <a href="https://www.npmjs.com/package/@elizaos/cli"><img src="https://img.shields.io/npm/v/@elizaos/cli?style=for-the-badge" alt="NPM Version"></a>
+  <a href="https://docs.elizaos.ai/"><img src="https://img.shields.io/badge/Documentation-Read%20Docs-blue?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://deepwiki.com/elizaOS/eliza"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki" height="28"></a>
+  <a href="https://github.com/elizaos/eliza/actions/workflows/image.yaml"><img src="https://img.shields.io/github/actions/workflow/status/elizaos/eliza/ci.yaml?branch=main&style=for-the-badge" alt="CI Status"></a>
+  <a href="https://discord.gg/ai16z"><img src="https://img.shields.io/discord/1253563208833433701?style=for-the-badge&logo=discord" alt="Discord"></a>
 </div>
 
-## 🌍 README Translations
+## ✨ What is Eliza?
 
-[中文说明](i18n/readme/README_CN.md) | [日本語の説明](i18n/readme/README_JA.md) | [한국어 설명](i18n/readme/README_KOR.md) | [Persian](i18n/readme/README_FA.md) | [Français](i18n/readme/README_FR.md) | [Português](i18n/readme/README_PTBR.md) | [Türkçe](i18n/readme/README_TR.md) | [Русский](i18n/readme/README_RU.md) | [Español](i18n/readme/README_ES.md) | [Italiano](i18n/readme/README_IT.md) | [ไทย](i18n/readme/README_TH.md) | [Deutsch](i18n/readme/README_DE.md) | [Tiếng Việt](i18n/readme/README_VI.md) | [עִברִית](i18n/readme/README_HE.md) | [Tagalog](i18n/readme/README_TG.md) | [Polski](i18n/readme/README_PL.md) | [Arabic](i18n/readme/README_AR.md) | [Hungarian](i18n/readme/README_HU.md) | [Srpski](i18n/readme/README_RS.md) | [Română](i18n/readme/README_RO.md) | [Nederlands](i18n/readme/README_NL.md) | [Ελληνικά](i18n/readme/README_GR.md)
+ElizaOS is an all-in-one, extensible platform for building and deploying AI-powered applications. Whether you're creating sophisticated chatbots, autonomous agents for business process automation, or intelligent game NPCs, Eliza provides the tools you need to get started quickly and scale effectively.
 
-## 🚩 Overview
+It combines a modular architecture, a powerful CLI, and a rich web interface to give you full control over your agents' development, deployment, and management lifecycle.
 
-<div align="center">
-  <img src="./docs/static/img/eliza_diagram.png" alt="Eliza Diagram" width="100%" />
-</div>
+For complete guides and API references, visit our official **[documentation](https://docs.elizaos.ai/)**.
 
-## ✨ Features
+## 🚀 Key Features
 
-- 🛠️ Full-featured Discord, Twitter and Telegram connectors
-- 🔗 Support for every model (Llama, Grok, OpenAI, Anthropic, Gemini, etc.)
-- 👥 Multi-agent and room support
-- 📚 Easily ingest and interact with your documents
-- 💾 Retrievable memory and document store
-- 🚀 Highly extensible - create your own actions and clients
-- 📦 Just works!
+- 🔌 **Rich Connectivity**: Out-of-the-box connectors for Discord, Telegram, Farcaster, and more.
+- 🧠 **Model Agnostic**: Supports all major models, including OpenAI, Gemini, Anthropic, Llama, and Grok.
+- 🖥️ **Modern Web UI**: A professional dashboard for managing agents, groups, and conversations in real-time.
+- 🤖 **Multi-Agent Architecture**: Designed from the ground up for creating and orchestrating groups of specialized agents.
+- 📄 **Document Ingestion**: Easily ingest documents and allow agents to retrieve information and answer questions from your data (RAG).
+- 🛠️ **Highly Extensible**: Build your own functionality with a powerful plugin system.
+- 📦 **It Just Works**: A seamless setup and development experience from day one.
 
-## Video Tutorials
+## 🏁 Getting Started (5-Minute Quick Start)
 
-[AI Agent Dev School](https://www.youtube.com/watch?v=ArptLpQiKfI&list=PLx5pnFXdPTRzWla0RaOxALTSTnVq53fKL)
+There are two recommended paths for using Eliza:
 
-## 🎯 Use Cases
+- **For Beginners & Standalone Projects (CLI):** If you want to create and deploy agents without modifying Eliza's core code, the CLI is the fastest and simplest method. The guide below is for you.
 
-- 🤖 Chatbots
-- 🕵️ Autonomous Agents
-- 📈 Business Process Handling
-- 🎮 Video Game NPCs
-- 🧠 Trading
+- **For Power Users & Contributors (Monorepo):** If you plan to contribute to Eliza, create complex custom plugins, or manage multiple projects in one place, we recommend cloning the full monorepo. See the [How to Contribute](#-how-to-contribute) section to get started.
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
+Get your first AI agent running in just a few commands.
 
-- [Python 2.7+](https://www.python.org/downloads/)
-- [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-- [pnpm](https://pnpm.io/installation)
+**Prerequisites:**
+
+- [Node.js](https://nodejs.org/) (v23+)
+- [bun](https://bun.sh/docs/installation)
 
 > **Note for Windows Users:** [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install-manual) is required.
 
-### Use the Starter (Recommended)
+### 1. Install the CLI
 
 ```bash
-git clone https://github.com/elizaos/eliza-starter.git
-cd eliza-starter
-cp .env.example .env
-pnpm i && pnpm build && pnpm start
+# Install the ElizaOS CLI globally
+bun install -g @elizaos/cli
+
+# Verify installation
+elizaos --version
 ```
 
-### Manually Start Eliza (Only recommended if you know what you are doing)
-
-#### Checkout the latest release
+### 2. Create Your Project
 
 ```bash
-# Clone the repository
+# Create a new project with an interactive setup
+elizaos create my-first-agent
+
+# Follow the prompts. For beginners, we recommend:
+# - Database: pglite (no setup required)
+# - Model Provider: openai
+# - Project Type: project
+```
+
+### 3. Configure Your API Key
+
+```bash
+cd my-first-agent
+
+# Open the local environment file
+elizaos env edit-local
+```
+
+Add your model provider's API key (e.g., for OpenAI):
+
+```env
+OPENAI_API_KEY=your_api_key_here
+```
+
+### 4. Start Your Agent
+
+```bash
+# Build and start the agent server
+elizaos start
+```
+
+Your agent is now running!
+
+- **Web Interface**: [http://localhost:3000](http://localhost:3000)
+- **API Endpoint**: `http://localhost:3000/api`
+
+---
+
+<details>
+<summary>📚 **Advanced CLI Commands & Usage**</summary>
+
+Eliza's CLI is powerful. Here are some more commands for development and management.
+
+#### Development Workflow
+
+```bash
+# Make changes to your agent code, then rebuild and restart
+bun run build
+elizaos start
+
+# Or, start in development mode with auto-rebuild
+elizaos dev
+
+# Run tests to verify your changes
+elizaos test
+```
+
+#### Agent & Environment Management
+
+```bash
+# List all available agents
+elizaos agent list
+
+# Start a specific agent by name
+elizaos agent start --name "MyAgent"
+
+# Show all environment variables
+elizaos env list
+```
+
+#### Debugging
+
+```bash
+# Start with detailed debug logging
+LOG_LEVEL=debug elizaos start
+```
+
+For a full command reference, run `elizaos --help` or `elizaos <command> --help`.
+
+</details>
+
+---
+
+## 🔧 Running ElizaOS Core Standalone
+
+Use ElizaOS agents directly in your applications without the CLI or web interface.
+
+```bash
 git clone https://github.com/elizaos/eliza.git
+cd eliza/examples
 
-# This project iterates fast, so we recommend checking out the latest release
-git checkout $(git describe --tags --abbrev=0)
-# If the above doesn't checkout the latest release, this should work:
-# git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+# Interactive chat
+OPENAI_API_KEY=your_key bun run standalone-cli-chat.ts
+
+# Basic message processing
+OPENAI_API_KEY=your_key bun run standalone.ts
 ```
 
-#### Edit the .env file
+## 🏛️ Architecture Overview
 
-Copy .env.example to .env and fill in the appropriate values.
-
-```
-cp .env.example .env
-```
-
-Note: .env is optional. If you're planning to run multiple distinct agents, you can pass secrets through the character JSON
-
-#### Start Eliza
-
-```bash
-pnpm i
-pnpm build
-pnpm start
-
-# The project iterates fast, sometimes you need to clean the project if you are coming back to the project
-pnpm clean
-```
-
-### Interact via Browser
-
-Once the agent is running, you should see the message to run "pnpm start:client" at the end.
-
-Open another terminal, move to the same directory, run the command below, then follow the URL to chat with your agent.
-
-```bash
-pnpm start:client
-```
-
-Then read the [Documentation](https://elizaos.github.io/eliza/) to learn how to customize your Eliza.
-
----
-
-### Automatically Start Eliza
-
-The start script provides an automated way to set up and run Eliza:
-
-```bash
-sh scripts/start.sh
-```
-
-For detailed instructions on using the start script, including character management and troubleshooting, see our [Start Script Guide](./docs/docs/guides/start-script.md).
-
-> **Note**: The start script handles all dependencies, environment setup, and character management automatically.
-
----
-
-### Modify Character
-
-1. Open `packages/core/src/defaultCharacter.ts` to modify the default character. Uncomment and edit.
-
-2. To load custom characters:
-    - Use `pnpm start --characters="path/to/your/character.json"`
-    - Multiple character files can be loaded simultaneously
-3. Connect with X (Twitter)
-    - change `"clients": []` to `"clients": ["twitter"]` in the character file to connect with X
-
----
-
-#### Additional Requirements
-
-You may need to install Sharp. If you see an error when starting up, try installing it with the following command:
+Eliza is a monorepo that contains all the packages needed to run the entire platform.
 
 ```
-pnpm install --include=optional sharp
+/
+├── packages/
+│   ├── server/         # Core backend server (Express.js)
+│   ├── client/         # Frontend web interface (React)
+│   ├── cli/            # Command-line tool for managing projects
+│   ├── core/           # Shared utilities and functions
+│   ├── app/            # Cross-platform desktop app (Tauri)
+│   ├── plugin-bootstrap/ # Core communication and event handling plugin
+│   ├── plugin-sql/     # Database integration (Postgres, PGLite)
+│   └── ...             # Other plugins and project starters
+└── ...
 ```
 
----
+- **`@elizaos/server`**: The Express.js backend that runs your agents and exposes the API.
+- **`@elizaos/client`**: The React-based web UI for managing and interacting with your agents.
+- **`@elizaos/cli`**: The central tool for scaffolding, running, and managing your projects.
+- **`@elizaos/plugin-bootstrap`**: The mandatory core plugin that handles message processing and basic agent actions.
 
-### Start Eliza with Gitpod
+## 🤝 How to Contribute
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
+We welcome contributions from the community! Please read our `CONTRIBUTING.md` guide to get started.
 
----
+- **Report a Bug**: Open an issue using the [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md) template.
+- **Request a Feature**: Use the [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md) template.
+- **Submit a Pull Request**: Please open an issue first to discuss your proposed changes.
 
-### Deploy Eliza in one click 
+## 📜 License
 
-Use [Fleek](https://fleek.xyz/eliza/) to deploy Eliza in one click. This opens Eliza to non-developers and provides the following options to build your agent:
-1. Start with a template
-2. Build characterfile from scratch
-3. Upload pre-made characterfile
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-Click [here](https://fleek.xyz/eliza/) to get started!
+## 🎓 Citation
 
----
+If you use Eliza in your research, please cite our paper:
 
-### Community & contact
-
-- [GitHub Issues](https://github.com/elizaos/eliza/issues). Best for: bugs you encounter using Eliza, and feature proposals.
-- [Discord](https://discord.gg/ai16z). Best for: sharing your applications and hanging out with the community.
-
-## Citation
-
-We now have a [paper](https://arxiv.org/pdf/2501.06781) you can cite for the Eliza OS:
 ```bibtex
 @article{walters2025eliza,
   title={Eliza: A Web3 friendly AI Agent Operating System},
@@ -185,7 +215,6 @@ We now have a [paper](https://arxiv.org/pdf/2501.06781) you can cite for the Eli
 <a href="https://github.com/elizaos/eliza/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=elizaos/eliza" alt="Eliza project contributors" />
 </a>
-
 
 ## Star History
 
